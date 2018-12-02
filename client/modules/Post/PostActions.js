@@ -84,12 +84,12 @@ export function deletePostRequest(cuid) {
 
 export function thumbUpPostRequest(cuid) {
   return (dispatch) => {
-    return callApi(`posts/${cuid}/thumbUp`, 'put').then((resp) => dispatch(thumbUpPost(cuid, resp.post)));
+    return callApi(`posts/${cuid}/thumbUp`, 'put').then((resp) => dispatch(editPost(cuid, resp.post)));
   };
 }
 
 export function thumbDownPostRequest(cuid) {
   return (dispatch) => {
-    return callApi(`posts/${cuid}/thumbDown`, 'put').then((resp) => dispatch(thumbDownPost(cuid, resp.post)));
+    return callApi(`posts/${cuid}/thumbDown`, 'put').then((resp) => dispatch(editPost(cuid, resp.post)));
   };
 }
